@@ -44,7 +44,6 @@ Switch seamlessly between on-device models, Private Cloud Compute, OpenAI, Anthr
 ```swift
 import FoundationModels
 import AnyFoundationModels
-import ClaudeForFoundationModels
 
 // Apple On-device
 var model: any LanguageModel = SystemLanguageModel.default
