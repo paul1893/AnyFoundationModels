@@ -26,7 +26,7 @@ let package = Package(
         // OpenAI
         .package(url: "https://github.com/paul1893/OpenAIForFoundationModels.git", from: "1.0.0"),
         // Anthropic
-        .package(url: "https://github.com/marcomasser/ClaudeForFoundationModels.git", branch: "older-OS"),
+        .package(url: "https://github.com/paul1893/ClaudeForFoundationModels.git", from: "0.2.0"),
         // Google
         .package(url: "https://github.com/paul1893/GoogleForFoundationModels.git", from: "1.0.0"),
     ],
