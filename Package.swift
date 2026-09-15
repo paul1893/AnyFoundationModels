@@ -20,7 +20,8 @@ let package = Package(
         .trait(name: "OpenAI"),
         .trait(name: "Claude"),
         .trait(name: "Google"),
-        .default(enabledTraits: ["OpenAI", "Claude", "Google"]),
+        .trait(name: "OpenRouter"),
+        .default(enabledTraits: ["OpenAI", "Claude", "Google", "OpenRouter"]),
     ],
     dependencies: [
         // OpenAI
@@ -29,6 +30,8 @@ let package = Package(
         .package(url: "https://github.com/paul1893/ClaudeForFoundationModels.git", from: "0.2.0"),
         // Google
         .package(url: "https://github.com/paul1893/GoogleForFoundationModels.git", from: "1.0.0"),
+        // OpenRouter
+        .package(url: "https://github.com/paul1893/OpenRouterForFoundationModels.git", branch: "master"),
     ],
     targets: [
         .target(
@@ -49,12 +52,18 @@ let package = Package(
                     package: "GoogleForFoundationModels",
                     condition: .when(traits: ["Google"])
                 ),
+                .product(
+                    name: "OpenRouterForFoundationModels",
+                    package: "OpenRouterForFoundationModels",
+                    condition: .when(traits: ["OpenRouter"])
+                ),
             ],
             swiftSettings: [
                 .enableUpcomingFeature("ApproachableConcurrency"),
                 .define("CLAUDE_ENABLED", .when(traits: ["Claude"])),
                 .define("OPENAI_ENABLED", .when(traits: ["OpenAI"])),
                 .define("GOOGLE_ENABLED", .when(traits: ["Google"])),
+                .define("OPENROUTER_ENABLED", .when(traits: ["OpenRouter"])),
             ],
         ),
     ]

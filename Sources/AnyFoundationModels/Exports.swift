@@ -7,3 +7,6 @@
 #if GOOGLE_ENABLED
 @_exported @_spi(Internal) import GoogleForFoundationModels
 #endif
+#if OPENROUTER_ENABLED
+@_exported @_spi(Internal) import OpenRouterForFoundationModels
+#endif
