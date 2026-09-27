@@ -25,11 +25,11 @@ let package = Package(
     ],
     dependencies: [
         // OpenAI
-        .package(url: "https://github.com/paul1893/OpenAIForFoundationModels.git", from: "1.0.0"),
+        .package(url: "https://github.com/paul1893/OpenAIForFoundationModels.git", from: "1.1.0"),
         // Anthropic
         .package(url: "https://github.com/paul1893/ClaudeForFoundationModels.git", from: "0.2.0"),
         // Google
-        .package(url: "https://github.com/paul1893/GoogleForFoundationModels.git", from: "1.0.0"),
+        .package(url: "https://github.com/paul1893/GoogleForFoundationModels.git", from: "1.1.0"),
         // OpenRouter
         .package(url: "https://github.com/paul1893/OpenRouterForFoundationModels.git", from: "1.0.0"),
     ],
