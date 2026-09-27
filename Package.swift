@@ -31,7 +31,7 @@ let package = Package(
         // Google
         .package(url: "https://github.com/paul1893/GoogleForFoundationModels.git", from: "1.0.0"),
         // OpenRouter
-        .package(url: "https://github.com/paul1893/OpenRouterForFoundationModels.git", branch: "master"),
+        .package(url: "https://github.com/paul1893/OpenRouterForFoundationModels.git", from: "1.0.0"),
     ],
     targets: [
         .target(
