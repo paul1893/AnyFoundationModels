@@ -18,6 +18,7 @@ With Apple's introduction of the `LanguageModel` protocol at WWDC26 in Foundatio
 | **OpenAI** | ❌ — No official solution proposed by OpenAI yet | ✅ |
 | **Anthropic** | ✅ — BUT minimum version requirement is set to 27.0.<br/>Official package enforce min version OS 27, which makes it barely unusable in real project that have min version lower than that. | ✅ – minimum version requirement is set to `.iOS(.v18), .macOS(.v15), .visionOS(.v2), .watchOS(.v11)`<br/>Thanks to [@marcomasser](https://github.com/anthropics/ClaudeForFoundationModels/issues/12) for the `older-OS` branch. |
 | **Google Gemini** | ✅ — BUT heavy. <br/>1. Add Firebase Swift package in your project<br/>2. Setup a Firebase project on `console.firebase.google.com`<br/>3. Add `GoogleService-Info.plist` and so on.<br/>…<br/>[Official tutorial](https://firebase.google.com/docs/ai-logic/apple-foundation-models-framework/get-started?api=dev) | ✅ — No Firebase configuration needed. |
+| **OpenRouter** | ❌ — No official solution proposed yet | ✅ |
 
 ---
 
@@ -68,6 +69,12 @@ model = GoogleLanguageModel(
     name: .gemini3_5_flash,
     auth: .apiKey("YOUR_GEMINI_API_KEY")
 )
+
+// OR OpenRouter
+model = OpenRouterLanguageModel(
+            model: "deepseek/deepseek-v4.1-flash",
+            apiKey: "YOUR_OPENROUTER_API_KEY",
+        )
 
 // Generate response using the LanguageModel interface
 let session = LanguageModelSession(model: model)
